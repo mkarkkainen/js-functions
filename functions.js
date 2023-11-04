@@ -281,3 +281,29 @@ function sum_char_codes(n) {
 }
 
 console.log(sum_char_codes(431234))
+
+
+const matrixFun = (matrix) => {
+  let subArr = []
+  let result = []
+  let chunkSize = matrix[0].length
+  for(let i = 0; i < matrix.length; i++){
+    for(let j = 0; j < matrix[0].length; j++){
+     
+      let a1 = matrix[i][j-1] ? matrix[i][j-1] : 0 ,
+          a2 = matrix[i][j],
+          a3 = matrix[i][j+1] ? matrix[i][j+1] : 0 
+      console.log(a1+a2+a3)
+    }
+  }
+  for (let y = 0; y < subArr.length; y += chunkSize) {
+    result.push(subArr.slice(y, y + chunkSize))
+  }
+  //return result
+}
+// i=0 + j=1 , i=0 + j=len-2 + j=len-1, i=0 + j=len-2
+// i=1 + j=0 , i=1 + j=len-2 +
+
+let input1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+console.log(matrixFun(input1))
