@@ -227,3 +227,30 @@ console.log(
   ])
 );
 
+// Given an array of numbers, output the ratio of positive, negative and zero numbers against the length of the array
+function plusMinus(arr) {
+    // Write your code here
+    let positives = arr.filter( num => num > 0),
+        zeros = arr.filter(num => num === 0),
+        negatives = arr.filter(num => num < 0)
+    positives = positives.length / arr.length
+    zeros = zeros.length / arr.length
+    negatives = negatives.length / arr.length
+    console.log(`${positives.toFixed(6)}\n${negatives.toFixed(6)}\n${zeros.toFixed(6)}`)
+}
+
+//console.log(plusMinus([ -4, 3, -9, 0, 4, 1 ]))
+
+
+//Min Max Sum - Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+function miniMaxSum(arr) {
+  // Write your code here
+  let sorted = arr.sort((a, b) => a > b)
+  let min = sorted.slice(0, 4).reduce((acc, curr) => acc + curr, 0)
+  let max = sorted.slice(1).reduce((acc, curr) => acc + curr, 0)
+  return min, max
+}
+
+//console.log(miniMaxSum([1,2,3,4,5]))
+console.log(miniMaxSum([7, 69, 2, 221, 8974]))
