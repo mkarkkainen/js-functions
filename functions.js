@@ -254,3 +254,18 @@ function miniMaxSum(arr) {
 
 //console.log(miniMaxSum([1,2,3,4,5]))
 console.log(miniMaxSum([7, 69, 2, 221, 8974]))
+
+function generateHashtag (str) {
+  if (!str.trim().length) return false
+  let result = str.trim().split(" ").filter(entry => entry.length !== 0).map(entry => entry[0].toUpperCase() + entry.slice(1)).join("")
+  if(result.length > 139) {
+    return false
+  } else if (!result.length) {
+    return false
+  } else {
+    return `#${result}`
+  }
+}
+console.log(generateHashtag("a".repeat(140)))
+
+
