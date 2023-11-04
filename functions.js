@@ -2,7 +2,8 @@
 // Example:
 // Input: "The quick brown fox"
 // Output: "quick"
-
+//
+//
 const longestWord = (string) => {
   const words = string.split(" ")
   
